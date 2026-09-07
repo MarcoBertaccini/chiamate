@@ -10,10 +10,10 @@ export default function CordEdge({ id, sourceX, sourceY, targetX, targetY, sourc
   const [editing, setEditing] = useState(false)
   const [draft, setDraft] = useState(data?.label || '')
 
-  const commit = () => {
-    setEdges((eds) => eds.map((e) => (e.id === id ? { ...e, data: { ...e.data, label: draft.trim() } } : e)))
-    setEditing(false)
-  }
+  const setLabel = (value) =>
+    setEdges((eds) => eds.map((e) => (e.id === id ? { ...e, data: { ...e.data, label: value } } : e)))
+
+  const commit = () => { setLabel(draft.trim()); setEditing(false) }
 
   const label = data?.label || ''
 
@@ -54,14 +54,22 @@ export default function CordEdge({ id, sourceX, sourceY, targetX, targetY, sourc
               {label}
             </span>
           ) : (
-            <button
-              className="cord-tag cord-tag--add"
-              title="Scrivi la risposta (es. sì / no)"
-              onClick={(e) => { e.stopPropagation(); setDraft(''); setEditing(true) }}
-              aria-label="Aggiungi etichetta alla freccia"
-            >
-              +
-            </button>
+            <div className="cord-quick-cluster">
+              <button
+                className="cord-quick"
+                onClick={(e) => { e.stopPropagation(); setLabel('Sì') }}
+              >Sì</button>
+              <button
+                className="cord-quick"
+                onClick={(e) => { e.stopPropagation(); setLabel('No') }}
+              >No</button>
+              <button
+                className="cord-tag--add"
+                title="Scrivi una risposta libera"
+                onClick={(e) => { e.stopPropagation(); setDraft(''); setEditing(true) }}
+                aria-label="Aggiungi etichetta alla freccia"
+              >+</button>
+            </div>
           )}
         </div>
       </EdgeLabelRenderer>

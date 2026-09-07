@@ -270,6 +270,20 @@ body {
 .cord-tag--add::before { content: none; }
 .cord-tag--add:hover { opacity: 1; transform: scale(1.08); box-shadow: var(--lift-2); }
 .react-flow__edge:hover .cord-tag--add { opacity: 1; }
+
+/* cluster rapido Sì / No / + sui cavi senza etichetta */
+.cord-quick-cluster { display: flex; align-items: center; gap: 4px; }
+.cord-quick {
+  font-family: var(--f-plate); font-weight: 600; font-size: 12px;
+  letter-spacing: .06em; color: var(--ink); cursor: pointer;
+  padding: 3px 9px; border-radius: 999px; line-height: 1;
+  background: linear-gradient(180deg, #f6eeda, #e2d4b4);
+  border: 1px solid var(--panel-edge); box-shadow: var(--lift-1);
+  opacity: .82; transition: opacity .12s, transform .12s, box-shadow .12s, filter .12s;
+}
+.cord-quick:hover { opacity: 1; filter: brightness(1.04); box-shadow: var(--lift-2); }
+.cord-quick:active { transform: translateY(1px); }
+.react-flow__edge:hover .cord-quick { opacity: 1; }
 .cord-tag-input {
   font-family: var(--f-plate); font-weight: 600; font-size: 12px;
   letter-spacing: .08em; text-transform: uppercase; text-align: center;
