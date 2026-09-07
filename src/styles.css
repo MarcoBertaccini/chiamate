@@ -256,7 +256,20 @@ body {
   background: #000; box-shadow: inset 0 0 0 1px var(--brass);
 }
 .cord-tag { padding-left: 15px; }
-.cord-tag:empty::before, .cord-tag.empty { }
+
+/* chip "+" per aggiungere l'etichetta su una freccia senza testo */
+.cord-tag--add {
+  padding: 0; width: 20px; height: 20px; border-radius: 50%;
+  display: grid; place-items: center; line-height: 1;
+  font-family: var(--f-plate); font-size: 15px; font-weight: 700;
+  color: var(--brass-ink); cursor: pointer;
+  background: linear-gradient(180deg, #f6eeda, #e2d4b4);
+  border: 1px dashed var(--brass); box-shadow: var(--lift-1);
+  opacity: .72; transition: opacity .12s, transform .12s, box-shadow .12s;
+}
+.cord-tag--add::before { content: none; }
+.cord-tag--add:hover { opacity: 1; transform: scale(1.08); box-shadow: var(--lift-2); }
+.react-flow__edge:hover .cord-tag--add { opacity: 1; }
 .cord-tag-input {
   font-family: var(--f-plate); font-weight: 600; font-size: 12px;
   letter-spacing: .08em; text-transform: uppercase; text-align: center;

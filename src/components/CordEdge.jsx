@@ -34,24 +34,34 @@ export default function CordEdge({ id, sourceX, sourceY, targetX, targetY, sourc
             transform: `translate(-50%, -50%) translate(${labelX}px, ${labelY}px)`,
             pointerEvents: 'all',
           }}
-          onDoubleClick={(e) => { e.stopPropagation(); setDraft(label); setEditing(true) }}
         >
           {editing ? (
             <input
               className="cord-tag-input"
               autoFocus
               value={draft}
-              placeholder="risposta"
+              placeholder="sì / no…"
               onChange={(e) => setDraft(e.target.value)}
               onBlur={commit}
               onKeyDown={(e) => { if (e.key === 'Enter') commit(); if (e.key === 'Escape') setEditing(false) }}
             />
+          ) : label ? (
+            <span
+              className="cord-tag"
+              title="Clic per modificare l'etichetta"
+              onClick={(e) => { e.stopPropagation(); setDraft(label); setEditing(true) }}
+            >
+              {label}
+            </span>
           ) : (
-            (label || selected) && (
-              <span className={`cord-tag ${label ? '' : 'empty'}`} title="Doppio-click per l'etichetta">
-                {label || '—'}
-              </span>
-            )
+            <button
+              className="cord-tag cord-tag--add"
+              title="Scrivi la risposta (es. sì / no)"
+              onClick={(e) => { e.stopPropagation(); setDraft(''); setEditing(true) }}
+              aria-label="Aggiungi etichetta alla freccia"
+            >
+              +
+            </button>
           )}
         </div>
       </EdgeLabelRenderer>
