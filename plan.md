@@ -10,16 +10,16 @@ Editor di flussi per i copy delle telefonate (Zenith Studio). Stile n8n: tavola 
 - [x] 0.5 plan.md + primo commit
 
 ## Fase 1 — Direzione visiva
-- [ ] 1.1 impeccable → direzione (palette, tipografia, look tavola/nodi, motion)
+- [x] 1.1 impeccable → direzione scelta: **Centralino a spinotti** (PRODUCT.md + surface brief con direction contract, seed 1a64a1d4)
 - [ ] 1.2 Token in styles.css
 
 ## Fase 2 — Canvas e nodi
-- [ ] 2.1 FlowCanvas (ReactFlow, background punti, controls, minimap)
-- [ ] 2.2 Nodi custom (Start, Copy, Decision, Objection, End)
-- [ ] 2.3 Editing nodo + edge con label
-- [ ] 2.4 Sidebar palette "aggiungi nodo"
-- [ ] 2.5 Toolbar (nuovo, fit-view, export/import JSON)
-- [ ] 2.6 Verifica interazioni in browser
+- [x] 2.1 FlowCanvas (ReactFlow, pannello a strisce, strumenti, minimap)
+- [x] 2.2 Nodi custom (Apertura/Battuta/Decisione/Obiezione/Chiusura) come piastre-jack
+- [x] 2.3 Editing nodo + cavo con cartellino-risposta + "traccia ramo"
+- [x] 2.4 Rastrelliera "aggiungi nodo"
+- [x] 2.5 Cartiglio (nuovo, lista, export/import JSON)
+- [x] 2.6 Verifica interazioni in browser (PIN, editing, persistenza reload)
 
 ## Fase 3 — Persistenza e accesso
 - [ ] 3.1 Progetto Supabase dedicato
