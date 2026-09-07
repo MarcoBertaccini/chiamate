@@ -36,13 +36,13 @@ Editor di flussi per i copy delle telefonate (Zenith Studio). Stile n8n: tavola 
 - [x] 4.3 Polish (canvas dentro le chrome, nodo Decisione come selettore)
 
 ## Fase 5 — Deploy
-- [ ] 5.1 public/CNAME
-- [ ] 5.2 GitHub Actions deploy.yml
-- [ ] 5.3 Commit + push
-- [ ] 5.4 Pages = GitHub Actions, Action verde
+- [x] 5.1 public/CNAME (chiamate.zenith-studio.it)
+- [x] 5.2 GitHub Actions deploy.yml
+- [x] 5.3 Commit + push
+- [ ] 5.4 Pages = GitHub Actions, Action verde (richiede impostazione repo di Marco)
 - [ ] 5.5 Istruzioni DNS a Marco + custom domain
 - [ ] 5.6 App live verificata
 
 ## Fase 6 — Chiusura
-- [ ] 6.1 impeccable finish review
+- [x] 6.1 impeccable finish (detector pulito, DESIGN.md; review in-thread — vedi nota)
 - [ ] 6.2 Aggiornare memory
