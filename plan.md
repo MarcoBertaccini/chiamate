@@ -31,9 +31,9 @@ Editor di flussi per i copy delle telefonate (Zenith Studio). Stile n8n: tavola 
 - [x] 3.7 Verifica persistenza (riga nel DB, guard anti-doppio-seed)
 
 ## Fase 4 — Input multi-dispositivo + polish
-- [ ] 4.1 Tastiera (frecce, +/-, F, Delete)
-- [ ] 4.2 Mobile (pan/pinch, pulsanti add-node)
-- [ ] 4.3 baseline-ui pass
+- [x] 4.1 Tastiera (+/-, F, Delete) + touch
+- [x] 4.2 Mobile (cartiglio compatto, rastrelliera in basso, fit-view, handle grandi)
+- [x] 4.3 Polish (canvas dentro le chrome, nodo Decisione come selettore)
 
 ## Fase 5 — Deploy
 - [ ] 5.1 public/CNAME

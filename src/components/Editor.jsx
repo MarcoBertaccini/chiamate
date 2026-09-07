@@ -116,7 +116,7 @@ export default function Editor({ flow, onRename, onNew, onOpenList, onLock, toas
   const isEmpty = nodes.length === 0
 
   return (
-    <div ref={rfWrap} style={{ position: 'fixed', inset: 0 }}>
+    <div style={{ position: 'fixed', inset: 0 }}>
       <div className="panel-ground" />
 
       {/* Cartiglio */}
@@ -141,8 +141,8 @@ export default function Editor({ flow, onRename, onNew, onOpenList, onLock, toas
           </span>
         </div>
         <div className="rail-top__actions">
-          <button className="knob knob--ghost" onClick={onOpenList}><IconList /> Script</button>
-          <button className="knob knob--ghost" onClick={onNew}><IconNew /> Nuovo</button>
+          <button className="knob knob--ghost" onClick={onOpenList}><IconList /> <span className="btn-t">Script</span></button>
+          <button className="knob knob--ghost" onClick={onNew}><IconNew /> <span className="btn-t">Nuovo</span></button>
           <button className="knob knob--ghost" onClick={exportJSON} title="Esporta JSON"><IconDownload /></button>
           <button className="knob knob--ghost" onClick={() => fileRef.current?.click()} title="Importa JSON"><IconUpload /></button>
           <button className="knob knob--ghost" onClick={onLock} title="Blocca"><IconLock /></button>
@@ -162,6 +162,7 @@ export default function Editor({ flow, onRename, onNew, onOpenList, onLock, toas
         <div className="rack__hint">Tocca per aggiungere.<br />Trascina dai jack per collegare.<br />F = adatta · +/− = zoom</div>
       </nav>
 
+      <div className="rf-holder" ref={rfWrap}>
       <ReactFlow
         nodes={nodes}
         edges={styledEdges}
@@ -170,13 +171,12 @@ export default function Editor({ flow, onRename, onNew, onOpenList, onLock, toas
         onConnect={onConnect}
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
-        defaultViewport={flow.data?.viewport}
         onMoveEnd={(_, vp) => scheduleSave({ data: { nodes, edges, viewport: vp } })}
         minZoom={0.2}
         maxZoom={2.5}
         proOptions={{ hideAttribution: true }}
-        fitView={!flow.data?.viewport}
-        fitViewOptions={{ padding: 0.25 }}
+        fitView
+        fitViewOptions={{ padding: 0.2, maxZoom: 1 }}
         deleteKeyCode={['Delete', 'Backspace']}
         panOnScroll
         selectionOnDrag
@@ -191,6 +191,7 @@ export default function Editor({ flow, onRename, onNew, onOpenList, onLock, toas
           style={{ width: 168, height: 108 }}
         />
       </ReactFlow>
+      </div>
 
       {/* Strumenti ottone */}
       <div className="instruments">
