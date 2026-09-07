@@ -39,10 +39,10 @@ Editor di flussi per i copy delle telefonate (Zenith Studio). Stile n8n: tavola 
 - [x] 5.1 public/CNAME (chiamate.zenith-studio.it)
 - [x] 5.2 GitHub Actions deploy.yml
 - [x] 5.3 Commit + push
-- [ ] 5.4 Pages = GitHub Actions, Action verde (richiede impostazione repo di Marco)
-- [ ] 5.5 Istruzioni DNS a Marco + custom domain
-- [ ] 5.6 App live verificata
+- [x] 5.4 Repo pubblica + Pages = GitHub Actions, Action verde, deploy OK
+- [x] 5.5 Custom domain registrato (chiamate.zenith-studio.it) — istruzioni DNS date a Marco
+- [ ] 5.6 App live (in attesa del record DNS CNAME lato Marco)
 
 ## Fase 6 — Chiusura
 - [x] 6.1 impeccable finish (detector pulito, DESIGN.md; review in-thread — vedi nota)
-- [ ] 6.2 Aggiornare memory
+- [x] 6.2 Memory aggiornata (project_chiamate.md + indice)
