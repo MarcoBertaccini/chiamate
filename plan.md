@@ -22,13 +22,13 @@ Editor di flussi per i copy delle telefonate (Zenith Studio). Stile n8n: tavola 
 - [x] 2.6 Verifica interazioni in browser (PIN, editing, persistenza reload)
 
 ## Fase 3 — Persistenza e accesso
-- [ ] 3.1 Progetto Supabase dedicato
-- [ ] 3.2 Tabella flows + RLS
-- [ ] 3.3 lib/supabase.js + lib/db.js
-- [ ] 3.4 useFlowPersistence (autosave debounced)
-- [ ] 3.5 PinGate
-- [ ] 3.6 Lista flussi (crea/rinomina/cambia/elimina)
-- [ ] 3.7 Verifica persistenza
+- [x] 3.1 Progetto Supabase dedicato (`fuabyzevydmphrhnzsms`, eu-west-1)
+- [x] 3.2 Tabella flows + RLS + policy anon
+- [x] 3.3 lib/supabase.js + lib/db.js (backend Supabase)
+- [x] 3.4 useFlowPersistence (autosave debounced)
+- [x] 3.5 PinGate (PIN 1234, sblocco in localStorage)
+- [x] 3.6 Lista flussi (crea/rinomina/cambia/elimina)
+- [x] 3.7 Verifica persistenza (riga nel DB, guard anti-doppio-seed)
 
 ## Fase 4 — Input multi-dispositivo + polish
 - [ ] 4.1 Tastiera (frecce, +/-, F, Delete)

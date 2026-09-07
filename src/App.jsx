@@ -23,9 +23,11 @@ export default function App() {
 
   const refreshList = useCallback(async () => setFlows(await listFlows()), [])
 
-  // Boot: dopo lo sblocco, carica (o semina) il primo flusso
+  // Boot: dopo lo sblocco, carica (o semina) il primo flusso — una sola volta
+  const booted = useRef(false)
   useEffect(() => {
-    if (!unlocked || current) return
+    if (!unlocked || current || booted.current) return
+    booted.current = true
     ;(async () => {
       const list = await listFlows()
       if (list.length === 0) {
